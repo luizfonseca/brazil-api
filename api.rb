@@ -24,7 +24,7 @@ class Response
         when :email
           response << Validator::Email.new(v).instance_eval { as_json }
         when :cep
-          response << Validator::Cpf.new(v).instance_eval { as_json }
+          response << Validator::Cep.new(v).instance_eval { as_json }
         when :cpf
           response << Validator::Cpf.new(v).instance_eval { as_json }
       end
