@@ -2,6 +2,9 @@ require 'sinatra'
 require 'slim'
 require 'json'
 require 'br/cpf'
+require 'net/http'
+require 'uri'
+
 
 
 get(%r{^(?!/api)}) { slim :index }
@@ -46,7 +49,7 @@ module Validator
     end
 
     def as_json
-      { email: { valid: valid?, email: @email }.merge(metadata) }
+      { email: { valid: valid?, value: @email }.merge(metadata) }
     end
 
     # TODO
@@ -65,8 +68,39 @@ module Validator
 
 
   class Cep
-    def self.valid?(cep)
+    
+    attr_accessor :cep
 
+
+
+
+    def initialize(cep)
+      @cep = Parser::Numeric.delete_non_numeric(cep)
+    end
+
+    def as_json
+      { cep: { valid: valid?, value: @cep, result: result } }
+    end
+
+ 
+    def result 
+      if valid?
+        request = Net::HTTP.get_response(request_uri)
+        json = JSON.parse(request.body)
+        return json if json.include?("localidade")
+        return false
+      else
+        false
+      end
+    end
+
+    def valid?
+      @cep.length == 8
+    end
+    
+
+    def request_uri
+      URI.parse("http://cep.correiocontrol.com.br/#{@cep}.json")
     end
   end
 
