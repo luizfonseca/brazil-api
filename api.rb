@@ -103,7 +103,8 @@ module Validator
     end
    
     def response_body
-      Net::HTTP.get_response(request_uri).body
+      req = Net::HTTP.get_response(request_uri)
+      return req.body
     end
 
     def valid?
