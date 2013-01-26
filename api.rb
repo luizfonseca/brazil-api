@@ -87,7 +87,7 @@ module Validator
  
     def result 
       if valid? && valid_json?
-        json = JSON.parse(body)
+        json = JSON.parse(response_body)
         return json if json.include?("localidade")
         return false
       else
@@ -103,8 +103,7 @@ module Validator
     end
    
     def response_body
-      req = Net::HTTP.get_response(request_uri)
-      return req.body
+      Net::HTTP.get_response(request_uri).body
     end
 
     def valid?
