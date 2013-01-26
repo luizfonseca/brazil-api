@@ -5,7 +5,9 @@ require 'br/cpf'
 require 'net/http'
 require 'uri'
 
-
+before do
+  cache_control :public, :must_revalidate, :max_age => 100
+end
 
 get(%r{^(?!/api)}) { slim :index }
 
@@ -85,13 +87,20 @@ module Validator
  
     def result 
       if valid?
-        request = Net::HTTP.get_response(request_uri)
-        json = JSON.parse(request.body)
-        return json if json.include?("localidade")
+        return check if json.include?("localidade")
         return false
       else
         false
       end
+    end
+
+
+    def check
+      request = Net::HTTP.get_response(request_uri)
+      json = JSON.parse(request.body)
+      return json
+      rescue JSON::ParserError
+        return false
     end
 
     def valid?
