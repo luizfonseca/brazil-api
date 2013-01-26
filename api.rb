@@ -115,7 +115,7 @@ module Validator
 
 
     def as_json
-      { cpf: { valid: valid?, cpf: @cpf } }
+      { cpf: { valid: valid?, value: @cpf } }
     end
 
 
