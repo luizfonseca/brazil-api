@@ -6,8 +6,7 @@ And because you don't need to add 5 javascripts to handle simple validations in 
 
 Build Status
 ------------
-[![Build Status](https://travis-ci.org/runeroniek/brazil-api.png?branch=master)](https://travis-ci.org/runeroniek/brazil-api)
-
+[![Build Status](https://travis-ci.org/runeroniek/brazil-api.png?branch=master)](https://travis-ci.org/runeroniek/brazil-api) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/runeroniek/brazil-api)
 
 Colaborate!
 -----------
