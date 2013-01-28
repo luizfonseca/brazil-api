@@ -10,8 +10,12 @@ gem "json"
 
 
 # Validation Gems
-gem "br-cpf" # For CPFs
+gem "br-cpf"
 
+
+group :development, :test do
+  gem 'rspec'
+end
 
 group :development do
   gem 'shotgun'
