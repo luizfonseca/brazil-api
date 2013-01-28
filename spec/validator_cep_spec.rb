@@ -51,15 +51,6 @@ describe Validator::Cep do
     end
   end
 
-
-#  describe :as_json do
-    
-    #it "should return a hash with some metadata for the given email" do
-      #email = Validator::Email.new("valid@email.com")
-      #expect(email.as_json).to eq({email: { valid: true, value: "valid@email.com"}})
-    #end
-  #end
-
 end
 
 
