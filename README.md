@@ -9,6 +9,13 @@ Build Status
 [![Build Status](https://travis-ci.org/runeroniek/brazil-api.png?branch=master)](https://travis-ci.org/runeroniek/brazil-api)
 
 
+Colaborate!
+-----------
+
+I wrote this to be open! If you have and need any new validation, open an issue and send a pull request! Just make sure the things are all-green :)
+*Feel free to do anything you want with this!*
+
+
 Current Implemented Validations
 -------------------
 
