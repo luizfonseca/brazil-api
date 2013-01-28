@@ -4,10 +4,10 @@ ruby '1.9.3'
 
 # The only gems you will need.
 gem "sinatra"
+gem "sinatra-cross_origin"
 gem "thin"
 gem "slim"
 gem "json"
-
 
 # Validation Gems
 gem "br-cpf"
