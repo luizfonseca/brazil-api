@@ -3,16 +3,24 @@ Brazil API
 
 Validação de dados via API usando HTTPS (importante se você estiver usando SSL). Ao invés de você inserir 2 libs pra verificar, você pode fazer um requisição a API. :)
 
+
+
+
 Build Status
 ------------
 [![Build Status](https://travis-ci.org/runeroniek/brazil-api.png?branch=master)](https://travis-ci.org/runeroniek/brazil-api) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/runeroniek/brazil-api)
 
-Colaborate!
------------
+
+
+
+Colabore!
+---------
 
 Escrevi isto pra ser open-source! Se você tem novas ideias de validações (ou até uma lib JS mínima que faça esses checks - ops!), abra um issue/envie um pull request! Só tenha certeza de que os testes passem (o que significa que você tem que escrever se implementar algo). 
 
 **Sinta-se livre para fazer o que quiser com o projeto.**
+
+
 
 
 Validações que já foram implementadas
