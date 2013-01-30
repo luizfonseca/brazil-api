@@ -14,6 +14,7 @@ Build Status
 
 
 
+___
 
 Colabore!
 ---------
@@ -22,8 +23,7 @@ Escrevi isto pra ser open-source! Se você tem novas ideias de validações (ou 
 
 **Sinta-se livre para fazer o que quiser com o projeto.**
 
-
-
+____
 
 O que você vai precisar?
 ------------------------
@@ -34,7 +34,7 @@ O que eu utilizei pra fazer a API? A lista do que você vai precisar pra rodar �
 - GIT (http://git-scm.com/downloads)
 
 
-** Após instalar Ruby & GIT **
+**Após instalar Ruby & GIT**
 
 - Clone o repositório: `git clone git://github.com/runeroniek/brazil-api` e entre no diretório /brazil-api
 - Instale o sinatra: (`gem install sinatra`)
@@ -42,7 +42,7 @@ O que eu utilizei pra fazer a API? A lista do que você vai precisar pra rodar �
 - Para rodar o servidor, use `shotgun api.rb`
 - Pronto, a api está rodando no teu servidor local! Cheque a URL (geralmente `http://localhost:9393`)
 
-** Para adicionar novas validações **
+**Para adicionar novas validações**
 
 - Crie um teste para a validação no diretório `spec/`, seguindo o seguinte padrão: `validator_SUAVALIDACAO_spec.rb`
 - Escreva os testes, antes de criar a validação e rode-os (os testes) usando `rspec spec`.
@@ -52,11 +52,12 @@ O que eu utilizei pra fazer a API? A lista do que você vai precisar pra rodar �
 - Adicione a query string na classe que está em `lib/response.rb`, seguindo o mesmo formato. 
 - Pronto, só fazer a validação na URL. Pode ficar assim: `http://localhost:9393/?validacao=SUA_VALIDACAO`.
 
+___
 
 Validações que já foram implementadas
 -------------------
 
-* **Obs.:**  Substitua XXX pelo valor que quiser checar *
+**Obs.:**  *Substitua XXX pelo valor que quiser checar*
 
 **Busca por CEP**
 
@@ -86,7 +87,7 @@ A resposta será um JSON se o CEP for válido e existir (no caso abaixo, utilize
 ```
 
 
-** Validação de CPF **
+**Validação de CPF**
 **Exemplo:** Requisição GET para  ```https://brazilapi.herokuapp.com/api?cpf=XXX```
 A resposta será um JSON:
 
@@ -100,7 +101,7 @@ A resposta será um JSON:
   }]
 ```
 
-** Validação de Email **
+**Validação de Email**
 **Exemplo:** Requisição GET para ```https://brazilapi.herokuapp.com/api?email=XXX```
 A resposta será um JSON:
 
@@ -114,7 +115,7 @@ A resposta será um JSON:
   }]
 ```
 
-** Verificar todos os anteriores **
+**Verificar todos os anteriores**
 **Exemplo:** Você pode usar todos os anteriores se quiser validar tudo de uma vez:
 Requisição GET para ```https://brazilapi.herokuapp.com/api?email=XXXX&cep=XXX&cpf=XXX`
 
