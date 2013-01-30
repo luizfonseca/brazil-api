@@ -13,6 +13,8 @@ Build Status
 
 
 
+
+
 Colabore!
 ---------
 
@@ -21,6 +23,34 @@ Escrevi isto pra ser open-source! Se você tem novas ideias de validações (ou 
 **Sinta-se livre para fazer o que quiser com o projeto.**
 
 
+
+
+O que você vai precisar?
+------------------------
+
+O que eu utilizei pra fazer a API? A lista do que você vai precisar pra rodar é a seguinte:
+
+- Ruby 1.9.3 ( ou mais recente, http://www.ruby-lang.org/pt/downloads/ )
+- GIT (http://git-scm.com/downloads)
+
+
+** Após instalar Ruby & GIT **
+
+- Clone o repositório: `git clone git://github.com/runeroniek/brazil-api` e entre no diretório /brazil-api
+- Instale o sinatra: (`gem install sinatra`)
+- Dentro do diretório da api, rode o comando `bundle install`
+- Para rodar o servidor, use `shotgun api.rb`
+- Pronto, a api está rodando no teu servidor local! Cheque a URL (geralmente `http://localhost:9393`)
+
+** Para adicionar novas validações **
+
+- Crie um teste para a validação no diretório `spec/`, seguindo o seguinte padrão: `validator_SUAVALIDACAO_spec.rb`
+- Escreva os testes, antes de criar a validação e rode-os (os testes) usando `rspec spec`.
+- Veja os testes falhar (já que não há implementação ainda) e aí sim: crie seu validador em `lib/validators/SUAVALIDACAO.rb`
+- Faça um require da sua validação no arquivo `lib/validator.rb` ( algo como `require 'validators/SUAVALIDACAO'` )
+- Certifique-se que sua validação possui o método `def as_json`, siga os exemplos dos outros validadores.
+- Adicione a query string na classe que está em `lib/response.rb`, seguindo o mesmo formato. 
+- Pronto, só fazer a validação na URL. Pode ficar assim: `http://localhost:9393/?validacao=SUA_VALIDACAO`.
 
 
 Validações que já foram implementadas
