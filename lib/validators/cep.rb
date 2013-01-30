@@ -17,7 +17,7 @@ module Validator
 
 
     def result 
-      JSON.parse(response_body) if valid? || {}
+      valid? ? JSON.parse(response_body) : {}
     end
 
     def response_body
