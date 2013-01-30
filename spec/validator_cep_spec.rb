@@ -34,7 +34,8 @@ describe Validator::Cep do
 
   describe :result do
     it "should return nil if the cep is invalid" do
-      expect(@cep_invalid.result).to eq(nil) 
+      @cep_invalid.stub(:response_body).and_return("{ \"result\": \"false\" }") 
+      expect(@cep_invalid.result).to eq({"result" => "false"}) 
     end
 
     it "should return an hash with cep data if cep is valid" do
