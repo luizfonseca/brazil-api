@@ -99,7 +99,7 @@ A resposta será um JSON com a união de todos os anteriores:
         "result": true,
         "data":
           {
-            "DADOS DO CPF"
+            "DADOS DO CEP"
           }
       }
   },
