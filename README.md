@@ -30,9 +30,14 @@ O que você vai precisar?
 
 O que eu utilizei pra fazer a API? A lista do que você vai precisar pra rodar é a seguinte:
 
-- Ruby 1.9.3 ( ou mais recente, http://www.ruby-lang.org/pt/downloads/ )
-- GIT (http://git-scm.com/downloads)
+**Se você NÃO conhece ruby nem rails**
+- Aqui tem um guia bem legal: http://www.maujor.com/railsgirlsguide/install.php
 
+
+**Se você já conhece Ruby on Rails:**
+- Ruby 1.9.3
+- GIT
+- Sinatra
 
 **Após instalar Ruby & GIT**
 
