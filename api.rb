@@ -8,8 +8,8 @@ require 'response'
 require 'validator'
 require 'parser'
 
+configure { set :force_ssl, true } 
 configure { set :server, :puma }
-
 
 
 before do
