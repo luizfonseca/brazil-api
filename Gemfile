@@ -1,12 +1,12 @@
 source "http://rubygems.org"
-ruby '1.9.3'
+ruby '2.1.0'
 
 
 # The only gems you will need.
 gem "sinatra"
 gem "sinatra-cross_origin"
-gem "thin"
 gem "slim"
+gem "puma"
 gem "json"
 
 # Validation Gems
