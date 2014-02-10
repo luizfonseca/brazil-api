@@ -22,11 +22,6 @@ GEM
     sinatra (1.0)
       rack (>= 1.0)
     sinatra-cross_origin (0.3.2)
-    slim (2.0.2)
-      temple (~> 0.6.6)
-      tilt (>= 1.3.3, < 2.1)
-    temple (0.6.7)
-    tilt (2.0.0)
 
 PLATFORMS
   ruby
@@ -39,4 +34,3 @@ DEPENDENCIES
   shotgun
   sinatra
   sinatra-cross_origin
-  slim

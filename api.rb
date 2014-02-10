@@ -1,12 +1,14 @@
 $LOAD_PATH << './lib'
 
 require 'sinatra'
+require 'sinatra/base'
 require 'sinatra/cross_origin'
-require 'slim'
 
 require 'response'
 require 'validator'
 require 'parser'
+
+configure { set :server, :puma }
 
 
 
@@ -14,7 +16,7 @@ before do
   cache_control :public, :must_revalidate, :max_age => 100
 end
 
-get(%r{^(?!/api)}) { slim :index }
+get(%r{^(?!/api)}) { erb :index }
 
 get '/api' do
   cross_origin

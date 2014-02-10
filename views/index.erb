@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>API HTTPS/SSL para busca de CEPs e outras validações</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/5.1.0/css/foundation.min.css"/>
+   <style type="text/css" media="screen">
+      h1 { font-size: 6em; margin-top: 1.5em; margin-bottom: -.2em }
+      h4 { font-size: 1em; }
+      h5 { font-weight: 200 !important; margin-top: 1em }
+      .instructions { margin-top: 2em; padding: 1em; }
+      dt { font-size: 1.8em; margin-top: 1em; font-weight: 200 !important; }
+      code { padding: .4em; background: snow }
+      pre { background: rgb(250, 250, 250); padding: .4em; width: 80%;}
+   </style>
+</head>
+<body>
+
+  <section class="home row">
+    <header class="large-12 columns">
+        <h1 class="text-center"> Brazil API </h1>
+        <h4 class="text-center"> Busca por CEPs, validação de Emails e CPFs, entre outros! </h4>
+        <h4 class="text-center"> 
+          É <a href="https://github.com/luizfonseca/brazil-api">Open source</a>,  
+          criado por <a href="https://about.luiz.cc">Luiz Fonseca</a>.  
+        </h4>
+    </header>
+
+
+    <article class="instructions large-12 large-centered columns">
+
+      <dl>
+        <dt>Busca por CEPs:</dt>
+          <dd>
+            <code> GET https://brazilapi.heroku.com/api?cep=78132500</code> 
+            <h5> Response </h5>
+            <pre>
+[{
+  "cep": 
+    {
+      "valid":true,
+      "result":true,
+      "data":
+        {
+          "id": "4785",
+          "cidade": "Várzea Grande",
+          "logradouro": "Nove",
+          "bairro": "Cohab Sete de Maio",
+          "cep": "78132-500",
+          "tp_logradouro": "Rua",
+          "cidade_sem_acento": "varzea grande",
+          "uf": "mt"
+        },
+      "message":""
+    }
+}]
+            </pre>
+          </dd>
+
+        <dt>Validação de CPFs:</dt>
+          <dd>
+            <code> GET https://brazilapi.herokuapp.com/api?cpf=111.111.111-11</code> 
+            <h5> Response </h5>
+            <pre>
+[{
+  "cpf":
+    {
+      "valid": true,
+      "value": "11111111111"
+    }
+  }]
+            </pre>
+          </dd>
+
+        <dt>Validação de Emails:</dt>
+          <dd>
+            <code> https://brazilapi.herokuapp.com/api?email=exemplo@provedor.com.br</code> 
+            <h5> Response </h5>
+            <pre>
+[{
+  "email":
+    {
+      "valid": true,
+      "value": "exemplo@provedor.com.br"
+    }
+  }]
+            </pre>
+          </dd>
+
+        <dt>Concatenando todos:</dt>
+          <dd>
+            <code>https://brazilapi.herokuapp.com/api?email=exemplo@provedor.com.br&cep=78132-500&cpf=111.111.111-11</code> 
+            <h5> Response </h5>
+            <pre>
+[
+  {
+    "email":
+      {
+        "valid": true,
+        "value":"exemplo@provedor.com.br"
+      }
+  },
+
+  {
+    "cep":
+      {
+        "valid": true,
+        "result": true,
+        "data":
+          {
+            "DADOS DO CEP"
+          }
+      }
+  },
+
+  {
+    "cpf":
+      {
+        "valid": true,
+        "value": "11111111111"
+      }
+  }]
+            </pre>
+          </dd>
+
+
+
+
+
+
+
+
+
+
+      </dl>
+    </article>
+
+
+  </section>
+  
+</body>
+
+
+</html>

@@ -2,10 +2,10 @@ source "http://rubygems.org"
 ruby '2.1.0'
 
 
+
 # The only gems you will need.
 gem "sinatra"
 gem "sinatra-cross_origin"
-gem "slim"
 gem "puma"
 gem "json"
 
