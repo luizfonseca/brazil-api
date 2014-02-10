@@ -8,7 +8,7 @@ describe Validator::Cep do
     @cep          = Validator::Cep.new("78132-500")
     @cep_invalid  = Validator::Cep.new("78132-5000")
     @body         = { rua: "", bairro: "", logradouro: ""}
-    @http_mock    = mock("Net::HTTPResponse")
+    @http_mock    = double("Net::HTTPResponse")
     @http_mock.stub(code: 200, message: :OK, content_type: "application/json", body: @body )
   end
 
