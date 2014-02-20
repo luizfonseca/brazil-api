@@ -8,6 +8,7 @@ gem "sinatra"
 gem "sinatra-cross_origin"
 gem "puma"
 gem "json"
+gem "newrelic_rpm"
 
 # Validation Gems
 gem "br-cpf"

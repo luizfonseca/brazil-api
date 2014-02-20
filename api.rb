@@ -10,7 +10,9 @@ require 'parser'
 
 configure { set :force_ssl, true } 
 configure { set :server, :puma }
-
+configure :production do
+  require 'newrelic_rpm'
+end
 
 before do
   cache_control :public, :must_revalidate, :max_age => 100
