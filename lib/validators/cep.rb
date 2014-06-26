@@ -17,7 +17,23 @@ module Validator
 
 
     def result 
-      valid? ? JSON.parse(response_body) : {}
+      json = {}
+
+      if valid?
+        body = JSON.parse(response_body)
+        log  = body['logradouro'].split(' ')
+
+        json = {
+          cidade: body['localidade'],
+          uf: body['uf'],
+          bairro: body['bairro'],
+          tp_logradouro: log.shift,
+          logradouro: log.join(' '),
+          cep: @cep
+        }
+      end
+
+      return json
     end
 
     def response_body
@@ -25,12 +41,12 @@ module Validator
     end
 
     def valid?
-      @cep.length == 8
+      @cep.length == 8 && !response_body['erro']
     end
 
 
     def request_uri
-      URI.parse("http://cep.s1mp.net/#{@cep}")
+      URI.parse("http://cep.correiocontrol.com.br/#{@cep}.json")
     end
   end
 end
