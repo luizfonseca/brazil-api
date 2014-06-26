@@ -23,13 +23,15 @@ module Validator
         body = JSON.parse(response_body)
         log  = body['logradouro'].split(' ')
 
-        json = {
-          cidade: body['localidade'],
-          uf: body['uf'],
-          bairro: body['bairro'],
-          tp_logradouro: log.shift,
-          logradouro: log.join(' '),
-          cep: @cep
+        json = { 
+          data: {
+            cidade: body['localidade'],
+            uf: body['uf'],
+            bairro: body['bairro'],
+            tp_logradouro: log.shift,
+            logradouro: log.join(' '),
+            cep: @cep
+          }
         }
       end
 
@@ -41,7 +43,7 @@ module Validator
     end
 
     def valid?
-      @cep.length == 8 && !response_body['erro']
+      @cep.length == 8
     end
 
 
